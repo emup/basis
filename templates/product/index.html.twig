@@ -19,11 +19,12 @@
         {% for product in products %}
             <tr>
                 <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.price }}</td>
                 <td>
-                    <a href="{{ path('product_show', {'id': product.id}) }}">show</a>
-                    <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
+                    <a href="{{ path('product_show', {'id': product.id}) }}">{{ product.name }}</a>
+                </td>
+                <td>&euro;{{ product.price|number_format(2, ',', '.') }}</td>
+                <td>
+                    <a href="{{ path('product_edit', {'id': product.id}) }}" class="btn btn-warning">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -34,6 +35,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('product_new') }}">Create new</a>
+    <a href="{{ path('product_new') }}" class="btn btn-primary">Create new</a>
 </div>
 {% endblock %}

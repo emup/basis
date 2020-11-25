@@ -20,13 +20,8 @@
                 <li class="nav-item {{ 'default' in route ? 'active' }}">
                     <a class="nav-link" href="{{ path('default') }}">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        CRUD
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item {{ 'product' in route ? 'active' }}" href="/product">Product</a>
-                    </div>
+                <li class="nav-item {{ 'product' in route ? 'active' }}">
+                    <a class="nav-link" href="{{ path('product_index') }}">Products</a>
                 </li>
             </ul>
             <ul class="navbar-nav {{ not app.user ? 'ml-auto' }}">
